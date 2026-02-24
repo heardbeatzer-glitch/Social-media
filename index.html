@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GiggleGrid | Your Daily Dose of Digital Giggles</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+</head>
+<body>
+
+    <div id="login-screen" class="screen active">
+        <div class="login-glitch-bg"></div>
+        <div class="login-card">
+            <h1 class="logo-text">GiggleGrid</h1>
+            <p class="tagline">Your Daily Dose of Digital Giggles</p>
+
+            <form id="email-form" class="auth-form">
+                <input type="email" id="email-input" placeholder="Je E-mailadres" required>
+                <button type="submit" class="neon-button">STUUR CODE</button>
+                <p id="auth-message" class="info-text"></p>
+            </form>
+
+            <form id="verify-form" class="auth-form hidden">
+                <input type="text" id="code-input" placeholder="Voer Code In" required>
+                <button type="submit" class="neon-button">VERIFIEER</button>
+            </form>
+
+            <p class="info-text">Nog geen account? Geen probleem! Voer je e-mail in om te starten.</p>
+        </div>
+    </div>
+
+    <div id="main-app" class="screen hidden">
+        <header class="app-header">
+            <h1 class="logo-text">GiggleGrid</h1>
+            <button id="upload-btn" class="header-action-btn neon-button">+ UPLOAD</button>
+            <button id="logout-btn" class="header-action-btn neon-button-alt">LOGUIT</button>
+            <input type="file" id="media-upload-input" accept="image/*,video/*" class="hidden">
+        </header>
+
+        <div id="video-feed" class="video-feed">
+            <div class="video-card">
+                <div class="media-container">
+                    <video class="giggle-media" src="https://www.w3schools.com/html/mov_bbb.mp4" controls loop muted></video>
+                    </div>
+                <div class="video-overlay">
+                    <div class="user-info">@GebruikerNaam</div>
+                    <div class="caption">Dit is een hilarische video! 😂</div>
+                    <div class="interactions">
+                        <button class="like-btn">❤️ <span class="like-count">123</span></button>
+                        <button class="comment-icon">💬</button>
+                    </div>
+                </div>
+                <div class="comment-section hidden">
+                    <div class="comments-list">
+                        <p><strong>@SuperGrappenmaker:</strong> LOL!</p>
+                        <p><strong>@LachKick:</strong> Hahahaa!</p>
+                    </div>
+                    <div class="comment-input-area">
+                        <input type="text" placeholder="Gooi je comment in de grid...">
+                        <button class="send-comment-btn">ZEND</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
